@@ -1,0 +1,8 @@
+.product-list {
+    animation: fade-in 1s ease-in 1.5s forwards;
+    opacity: 0;
+}
+
+.total .product-amount {
+    display: none;
+}

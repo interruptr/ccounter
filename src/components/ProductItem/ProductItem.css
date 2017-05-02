@@ -1,0 +1,33 @@
+.product-item {
+    display: inline-flex;
+    flex-grow: 1;
+}
+
+.product-item .product-title {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.product-item > div {
+    margin: 5px 0;
+}
+
+.product-description {
+    text-align: left;
+}
+
+.product-description > span {
+    padding-right: 3px;
+}
+
+.product-amount {
+    float: right;
+}
+
+.product-amount > input {
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    margin-right: 3px;
+    max-width: 50px;
+}
