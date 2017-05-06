@@ -32,9 +32,13 @@ class ProductItem extends Component {
                         <input onChange={ this.recalculate } type="number" value={ this.amount } />
                     </span>
 
-                    <div onClick={ () => this.props.removeProduct(this.props.item) }>
-                        x
-                    </div>
+                    {
+                        this.props.item.name &&
+                        <button className="btn btn-default"
+                                onClick={ () => this.props.removeProduct(this.props.item) }>
+                            x
+                        </button>
+                    }
                 </div>
             </div>
         )
