@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07816764-6391-4caf-9d7c-e7dd8cb1825e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ProductInput/ProductInput.css" afterPath="$PROJECT_DIR$/src/components/ProductInput/ProductInput.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ProductItem/ProductItem.css" afterPath="$PROJECT_DIR$/src/components/ProductItem/ProductItem.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ProductItem/ProductItem.js" afterPath="$PROJECT_DIR$/src/components/ProductItem/ProductItem.js" />
-    </list>
+    <list default="true" id="07816764-6391-4caf-9d7c-e7dd8cb1825e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +12,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProductItem.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ProductItem/ProductItem.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
@@ -93,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductItem.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductItem.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ProductItem/ProductItem.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="300">
+              <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -136,9 +131,9 @@
         <option value="$PROJECT_DIR$/src/actions/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/reducers/addedProductReducer.js" />
         <option value="$PROJECT_DIR$/src/components/ProductInput/ProductInput.css" />
-        <option value="$PROJECT_DIR$/src/components/ProductItem/ProductItem.css" />
         <option value="$PROJECT_DIR$/src/components/ProductList/ProductList.js" />
         <option value="$PROJECT_DIR$/src/components/ProductItem/ProductItem.js" />
+        <option value="$PROJECT_DIR$/src/components/ProductItem/ProductItem.css" />
       </list>
     </option>
   </component>
@@ -459,12 +454,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494095257827</updated>
-      <workItem from="1494095259136" duration="5259000" />
+      <workItem from="1494095259136" duration="5291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5259000" />
+    <option name="totallyTimeSpent" value="5291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1431" height="944" extended-state="0" />
@@ -624,22 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProductItem/ProductItem.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProductInput/ProductInput.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ProductList/ProductList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -657,6 +636,22 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProductInput/ProductInput.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProductItem/ProductItem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

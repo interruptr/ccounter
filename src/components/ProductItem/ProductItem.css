@@ -20,9 +20,6 @@
     padding-right: 3px;
 }
 
-.product-amount {
-}
-
 .product-amount > input {
     border: none;
     border-bottom: 2px solid gray;
