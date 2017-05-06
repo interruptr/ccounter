@@ -29,8 +29,12 @@ class ProductItem extends Component {
                     <span>{ Math.round(this.props.item.macros.fat, 2) }g fat</span>
 
                     <span className="product-amount">
-                        <input onChange={ this.recalculate } type="number" value={ this.amount }/>g
+                        <input onChange={ this.recalculate } type="number" value={ this.amount } />
                     </span>
+
+                    <div onClick={ () => this.props.removeProduct(this.props.item) }>
+                        x
+                    </div>
                 </div>
             </div>
         )
@@ -43,6 +47,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
     return {
+        removeProduct: product => dispatch(productListActions.removeProduct(product)),
         modifyProductAmount: (product, previousAmount, amount) => dispatch(productListActions.modifyProductAmount(product, previousAmount, amount))
     }
 }

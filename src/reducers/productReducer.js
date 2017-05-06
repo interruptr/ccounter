@@ -1,28 +1,20 @@
+import { CREATE_PRODUCT, PRODUCTS_LOADED } from "./../actions/productActions";
+
 export default function productReducer(state = [], action) {
     switch (action.type) {
-        case "products.loaded": 
-            return action.products;
-        case "product.add":
+        case CREATE_PRODUCT:
             return [
-                ...state, 
+                ...state,
                 Object.assign({}, action.product)
             ];
-        case "product.create":
+
+        case PRODUCTS_LOADED:
             return [
-                ...state, 
-                Object.assign({}, action.product)
-            ]; 
-        case "product.modifyAmount":
-            const updatedItem = state.map(product => {
-                if (product.id === action.product.id) {
-                    return { ...product, ...action.payload }
-                }
+                ...state,
+                Object.assign({}, action.products)
+            ];
 
-                return product;
-            });
-
-            return updatedItem;    
-        default: 
+        default:
             return state;
     }
 }

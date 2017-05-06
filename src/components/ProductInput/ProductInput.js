@@ -20,13 +20,7 @@ class ProductInput extends Component {
     constructor() {
         super();
 
-        this.onProductSelected = (product) => {
-            this.props.onSelected(product);
-        }
-    }
-
-    render() {
-        var list = [
+        this.availableProducts = [
             {
                 id: 1,
                 name: "Oats",
@@ -57,11 +51,17 @@ class ProductInput extends Component {
                     fat: 0
                 }
             }
-        ];
+        ]; // TODO Fetch
 
+        this.onProductSelected = (product) => {
+            this.props.onSelected(product);
+        }
+    }
+
+    render() {
         return (
             <div className="product-input">
-                <Autosuggest datalist={ list } 
+                <Autosuggest datalist={ this.availableProducts }
                              onChange={ this.onProductSelected }
                              itemAdapter={ ProductAdapter.instance } 
                              valueIsItem={ true }

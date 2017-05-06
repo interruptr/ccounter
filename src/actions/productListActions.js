@@ -1,14 +1,12 @@
 import productApi from "../api/mockProductApi";
-
-const ADD_PRODUCT = "product.add";
-const MODIFY_PRODUCT_AMOUNT = "product.modifyAmount"
+import { ADD_PRODUCT, MODIFY_PRODUCT_AMOUNT, REMOVE_PRODUCT } from "./actionTypes";
 
 export function addProduct(product) {
     return {
         type: ADD_PRODUCT,
         product
     };
-};
+}
 
 export function modifyProductAmount(product, previousAmount, amount) {
     function multiply(a, b) {
@@ -24,7 +22,7 @@ export function modifyProductAmount(product, previousAmount, amount) {
             carbs: multiply(product.macros.carbs, ratio),
             fat: multiply(product.macros.fat, ratio)
         }
-    }
+    };
 
     return {
         type: MODIFY_PRODUCT_AMOUNT,
@@ -33,18 +31,9 @@ export function modifyProductAmount(product, previousAmount, amount) {
     }
 }
 
-export function loadProductsSuccess(products) {
-    return { type: "products.loaded", products };
-}
-
-export function loadProducts() {
-    return function (dispatch) {
-        return productApi.getAllProducts()
-            .then(products => {
-                dispatch(loadProductsSuccess(products));
-            })
-            .catch(error => {
-                throw error;
-            });
+export function removeProduct(product) {
+    return {
+        type: REMOVE_PRODUCT,
+        product
     }
 }

@@ -21,7 +21,7 @@ class ProductList extends Component {
                 carbs: 0,
                 fat: 0
             }
-        }
+        };
 
         this.props.addedProducts.forEach(function(element) {
             total = {
@@ -38,8 +38,8 @@ class ProductList extends Component {
     }
 
     render() {
-        var addedProducts = this.props.addedProducts.map(this.productItemRow),
-            total = this.getTotal();
+        const addedProducts = this.props.addedProducts.map(this.productItemRow),
+              total = this.getTotal();
 
         return (
             <div>
@@ -65,6 +65,6 @@ function mapStateToProps(state) {
 ProductList.propTypes = {
     dispatch: PropTypes.func.isRequired,
     addedProducts: PropTypes.array.isRequired
-}
+};
 
 export default connect(mapStateToProps)(ProductList);

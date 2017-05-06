@@ -31,7 +31,8 @@ class App extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addProduct: product => dispatch(productListActions.addProduct(product))
+        addProduct: product => dispatch(productListActions.addProduct(product)),
+        removeProduct: product => dispatch(productListActions.removeProduct(product))
     }
 }
 
