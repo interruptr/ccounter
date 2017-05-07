@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Autosuggest, { ItemAdapter } from 'react-bootstrap-autosuggest';
+import { connect } from 'react-redux';
 import './ProductInput.css';
 
 class ProductAdapter extends ItemAdapter {
@@ -51,7 +52,7 @@ class ProductInput extends Component {
                     fat: 0
                 }
             }
-        ]; // TODO Fetch
+        ];
 
         this.onProductSelected = (product) => {
             this.props.onSelected(product);
@@ -61,9 +62,9 @@ class ProductInput extends Component {
     render() {
         return (
             <div className="product-input">
-                <Autosuggest datalist={ this.availableProducts }
+                <Autosuggest datalist={ this.props.dataset }
                              onChange={ this.onProductSelected }
-                             itemAdapter={ ProductAdapter.instance } 
+                             itemAdapter={ ProductAdapter.instance }
                              valueIsItem={ true }
                              itemReactKeyPropName="name"
                              itemValuePropName="name"
@@ -73,4 +74,10 @@ class ProductInput extends Component {
     }
 }
 
-export default ProductInput;
+function mapStateToProps(state) {
+    return {
+        dataset: state.products
+    }
+}
+
+export default connect(mapStateToProps)(ProductInput);

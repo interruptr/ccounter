@@ -34,7 +34,7 @@ class ProductList extends Component {
             }
         });
 
-        return <ProductItem key={ -1 } item={ total } />
+        return <ProductItem item={ total } />
     }
 
     render() {

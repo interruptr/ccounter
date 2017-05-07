@@ -1,4 +1,4 @@
-import { CREATE_PRODUCT, PRODUCTS_LOADED } from "./../actions/productActions";
+import { CREATE_PRODUCT, PRODUCTS_LOADED } from "./../actions/actionTypes";
 
 export default function productReducer(state = [], action) {
     switch (action.type) {
@@ -9,10 +9,7 @@ export default function productReducer(state = [], action) {
             ];
 
         case PRODUCTS_LOADED:
-            return [
-                ...state,
-                Object.assign({}, action.products)
-            ];
+            return action.products;
 
         default:
             return state;

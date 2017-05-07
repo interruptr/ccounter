@@ -21,12 +21,18 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <ProductInput onSelected={ this.addProduct } />
+        <ProductInput dataset={ this.props.availableProducts } onSelected={ this.addProduct } />
         <br />    
         <ProductList />
       </div>
     );
   }
+}
+
+function mapStateToProps(state) {
+    return {
+        availableProducts: state.products
+    }
 }
 
 function mapDispatchToProps(dispatch) {
@@ -36,4 +42,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
