@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './App.css';
-import Header from './../Header/Header.js';
-import ProductList from './../ProductList/ProductList.js';
-import ProductInput from './../ProductInput/ProductInput';
+import './CalorieCounter.css';
+import Header from './../../components/Header/Header.js';
+import ProductList from './../../components/ProductList/ProductList.js';
+import ProductInput from './../../components/ProductInput/ProductInput';
 import * as productListActions from './../../actions/productListActions';
 
 class App extends Component {

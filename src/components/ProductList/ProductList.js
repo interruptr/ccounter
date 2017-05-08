@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductItem from './../ProductItem/ProductItem';
+import * as productListActions from './../../actions/productListActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './ProductList.css';
@@ -7,10 +8,6 @@ import './ProductList.css';
 class ProductList extends Component {
     constructor() {
         super();
-    }
-
-    productItemRow(product, index) {
-        return <ProductItem key={ index } item={ product } />;
     }
 
     getTotal() {
@@ -38,7 +35,12 @@ class ProductList extends Component {
     }
 
     render() {
-        const addedProducts = this.props.addedProducts.map(this.productItemRow),
+        const addedProducts = this.props.addedProducts.map((product, index) => (
+                  <ProductItem key={ index }
+                               item={ product }
+                               removeProduct={ this.props.removeProduct }
+                               updateProductAmount={ this.props.updateProductAmount } />
+              )),
               total = this.getTotal();
 
         return (
@@ -62,9 +64,16 @@ function mapStateToProps(state) {
     };
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        removeProduct: product => dispatch(productListActions.removeProduct(product)),
+        updateProductAmount: (product, previousAmount, amount) => dispatch(productListActions.modifyProductAmount(product, previousAmount, amount))
+    }
+}
+
 ProductList.propTypes = {
     dispatch: PropTypes.func.isRequired,
     addedProducts: PropTypes.array.isRequired
 };
 
-export default connect(mapStateToProps)(ProductList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
