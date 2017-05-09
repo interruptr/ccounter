@@ -38,8 +38,7 @@ class ProductList extends Component {
         const addedProducts = this.props.addedProducts.map((product, index) => (
                   <ProductItem key={ index }
                                item={ product }
-                               removeProduct={ this.props.removeProduct }
-                               updateProductAmount={ this.props.updateProductAmount } />
+                  />
               )),
               total = this.getTotal();
 
@@ -64,16 +63,9 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        removeProduct: product => dispatch(productListActions.removeProduct(product)),
-        updateProductAmount: (product, previousAmount, amount) => dispatch(productListActions.modifyProductAmount(product, previousAmount, amount))
-    }
-}
-
 ProductList.propTypes = {
     dispatch: PropTypes.func.isRequired,
     addedProducts: PropTypes.array.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default connect(mapStateToProps)(ProductList);
