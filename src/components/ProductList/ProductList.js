@@ -63,9 +63,4 @@ function mapStateToProps(state) {
     };
 }
 
-ProductList.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    addedProducts: PropTypes.array.isRequired
-};
-
 export default connect(mapStateToProps)(ProductList);
