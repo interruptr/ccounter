@@ -45,10 +45,10 @@ class ProductList extends Component {
         return (
             <div>
                 <div className="product-list">
-                    <div className="list-group">
+                    <div className="added-products">
                         { addedProducts }
                     </div>
-                    <div className="list-group total">
+                    <div className="products-total">
                         { total }
                     </div>
                 </div>

@@ -2,6 +2,13 @@ import React from 'react';
 import Autocomplete from 'react-autocomplete';
 import './ProductInput.css';
 
+const menuStyle = {
+    background: 'white',
+    zIndex: 2,
+    position: 'fixed',
+    paddingTop: '2px'
+};
+
 const ProductInput = (props) => (
     <div className="product-input">
         <Autocomplete items={ props.dataset }
@@ -11,6 +18,7 @@ const ProductInput = (props) => (
                       renderItem={item => (
                           <div>{item.name} ({ item.calories } calories)</div>
                       )}
+                      menuStyle={menuStyle}
         />
     </div>
 );

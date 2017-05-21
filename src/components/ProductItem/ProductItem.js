@@ -18,27 +18,28 @@ class ProductItem extends Component {
 
     render() {
         return (
-            <div className="product-item list-group-item">
-                <div className="product-title list-group-item-heading">
+            <div className="product-item">
+                <div className="product-title">
                     { this.props.item.name }
                 </div>
-                <div className="product-description list-group-item-text">
+                <div className="product-calories">
                     <span>{ Math.round(this.props.item.calories) } calories</span>
-                    <span>{ Math.round(this.props.item.macros.protein) }g protein</span>
-                    <span>{ Math.round(this.props.item.macros.carbs) }g carbohydrates</span>
-                    <span>{ Math.round(this.props.item.macros.fat) }g fat</span>
 
-                    <span className="product-amount">
+                    <div className="product-amount">
                         <input onChange={ this.recalculate } type="number" value={ this.amount } />
-                    </span>
-
+                    </div>
                     {
                         this.props.item.name &&
-                        <button className="btn btn-default"
+                        <button className="button"
                                 onClick={ () => this.props.removeProduct(this.props.item) }>
                             x
                         </button>
                     }
+                </div>
+                <div className="product-macros">
+                    <span>{ Math.round(this.props.item.macros.protein) }g protein</span>
+                    <span>{ Math.round(this.props.item.macros.carbs) }g carbohydrates</span>
+                    <span>{ Math.round(this.props.item.macros.fat) }g fat</span>
                 </div>
             </div>
         )

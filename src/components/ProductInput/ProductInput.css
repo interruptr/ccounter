@@ -1,3 +1,22 @@
-.autosuggest > ul {
+.product-input > div {
+    width: 70%;
+}
+
+.product-input > div > div > div {
+    padding: 10px 0;
+    border-bottom: 1px solid aliceblue;
+}
+
+.product-input input {
+    background: inherit;
+    border-bottom: 2px solid darkgray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     width: 100%;
+}
+
+.product-input input:focus {
+    border-bottom: 2px solid dodgerblue;
+    outline: none;
 }
