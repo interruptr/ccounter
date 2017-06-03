@@ -1,8 +1,13 @@
 import productApi from "../api/mockProductApi";
-import { CREATE_PRODUCT, PRODUCTS_LOADED } from "./actionTypes";
+import { CREATE_PRODUCT, PRODUCTS_LOADED, DELETE_PRODUCT } from "./actionTypes";
 
 export const createProduct = (product) => ({
     type: CREATE_PRODUCT,
+    product: product
+});
+
+export const deleteProduct = (product) => ({
+    type: DELETE_PRODUCT,
     product: product
 });
 

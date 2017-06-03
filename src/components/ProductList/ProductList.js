@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import ProductItem from './../ProductItem/ProductItem';
+import Total from './ProductTotal';
 import * as productListActions from './../../actions/productListActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './ProductList.css';
 
 class ProductList extends Component {
-    constructor() {
-        super();
-    }
-
     getTotal() {
         let total = {
             calories: 0,
@@ -35,22 +32,19 @@ class ProductList extends Component {
     }
 
     render() {
-        const addedProducts = this.props.addedProducts.map((product, index) => (
-                  <ProductItem key={ index }
-                               item={ product }
-                  />
-              )),
-              total = this.getTotal();
+        const total = this.getTotal();
 
         return (
             <div>
                 <div className="product-list">
                     <div className="added-products">
-                        { addedProducts }
+                        {
+                            this.props.addedProducts.map((product, index) => (
+                                <ProductItem key={ index } item={ product } />
+                            ))
+                        }
                     </div>
-                    <div className="products-total">
-                        { total }
-                    </div>
+                    <Total counted={ total } />
                 </div>
             </div>
         );

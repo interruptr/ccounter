@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './CalorieCounter.css';
-import Header from './../../components/Header/Header.js';
-import ProductList from './../../components/ProductList/ProductList.js';
+import Header from './../../components/Header/Header';
+import Title from './../../components/Header/Title';
+import Subtitle from './../../components/Header/Subtitle';
+import ProductList from './../../components/ProductList/ProductList';
 import ProductInput from './../../components/ProductInput/ProductInput';
 import * as productListActions from './../../actions/productListActions';
 
@@ -20,10 +23,14 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Header />
+        <Header>
+            <Title>Hello</Title>
+            <Subtitle>Tell me what You've eaten today...</Subtitle>
+        </Header>
         <ProductInput dataset={ this.props.availableProducts } onSelected={ this.addProduct } />
         <br />    
         <ProductList />
+          <Link to="/products">Product manager</Link>
       </div>
     );
   }

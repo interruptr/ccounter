@@ -75,7 +75,7 @@ class ProductApi {
         }
 
         if (product.id) {
-          const existingProductIndex = products.findIndex(a => a.id == product.id);
+          const existingProductIndex = products.findIndex(a => a.id === product.id);
           products.splice(existingProductIndex, 1, product);
         } else {
           //Just simulating creation here.
@@ -94,7 +94,7 @@ class ProductApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfProductToDelete = products.findIndex(product => {
-          product.id == productId;
+          return product.id === productId;
         });
         products.splice(indexOfProductToDelete, 1);
         resolve();
