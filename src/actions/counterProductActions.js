@@ -1,4 +1,3 @@
-import productApi from "../api/mockProductApi";
 import { ADD_PRODUCT, MODIFY_PRODUCT_AMOUNT, REMOVE_PRODUCT } from "./actionTypes";
 
 export function addProduct(product) {

@@ -1,15 +1,18 @@
 import React from 'react';
+import Button, { red } from '../../components/Button';
 
 const EditableProductItem = (props) => (
-    <div className="editable-product">
-        <div>{ props.product.name }</div>
-        <div>{ props.product.calories }</div>
-        <div>{ props.product.macros.protein }</div>
-        <div>{ props.product.macros.carbs }</div>
-        <div>{ props.product.macros.fat }</div>
-        <button onClick={props.onClickUpdate}>Update</button>
-        <button onClick={props.onClickDelete}>Delete</button>
-    </div>
+    <tr>
+        <td>{ props.product.name }</td>
+        <td>{ props.product.calories }</td>
+        <td>{ props.product.macros.protein }</td>
+        <td>{ props.product.macros.carbs }</td>
+        <td>{ props.product.macros.fat }</td>
+        <td>
+                <Button onClick={props.onClickUpdate}>Update</Button>
+                <Button color={ red } onClick={props.onClickDelete}>Delete</Button>
+        </td>
+    </tr>
 );
 
 export default EditableProductItem;

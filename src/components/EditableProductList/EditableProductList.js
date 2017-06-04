@@ -1,10 +1,11 @@
 import React from 'react';
-import './EditableProduct.css';
+
+const style = { width: '100%' };
 
 const EditableProductList = (props) => (
-    <div className="list-of-products">
+    <table style={ style } className="pure-table pure-table-bordered">
         { props.children }
-    </div>
+    </table>
 );
 
 export default EditableProductList;

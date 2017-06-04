@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import ProductItem from './../ProductItem/ProductItem';
 import Total from './ProductTotal';
-import * as productListActions from './../../actions/productListActions';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './ProductList.css';
+
+const style = { width: '100%' };
 
 class ProductList extends Component {
     getTotal() {
@@ -17,7 +16,7 @@ class ProductList extends Component {
             }
         };
 
-        this.props.addedProducts.forEach(function(element) {
+        this.props.counterProducts.forEach(function(element) {
             total = {
                 calories: total.calories + element.calories,
                 macros: {
@@ -36,16 +35,14 @@ class ProductList extends Component {
 
         return (
             <div>
-                <div className="product-list">
-                    <div className="added-products">
-                        {
-                            this.props.addedProducts.map((product, index) => (
-                                <ProductItem key={ index } item={ product } />
-                            ))
-                        }
-                    </div>
-                    <Total counted={ total } />
-                </div>
+                <table style={ style } className="pure-table pure-table-bordered">
+                    {
+                        this.props.counterProducts.map((product, index) => (
+                            <ProductItem key={ index } item={ product } />
+                        ))
+                    }
+                </table>
+                <Total counted={ total } />
             </div>
         );
     }
@@ -53,7 +50,7 @@ class ProductList extends Component {
 
 function mapStateToProps(state) {
     return {
-        addedProducts: state.addedProducts // allows to use this.props.products
+        counterProducts: state.counterProducts // allows to use this.props.products
     };
 }
 

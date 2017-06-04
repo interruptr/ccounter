@@ -2,19 +2,24 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './../reducers';
 import { loadState, saveState } from './localStorage';
-import { loadProducts } from './../actions/productActions';
+import { loadProducts } from '../actions/managedProductActions';
 import throttle from 'lodash/throttle';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const configureStore = () => {
     const persistedState = loadState(),
           store = createStore(
               rootReducer,
               persistedState,
-              applyMiddleware(thunk)
+              composeWithDevTools(
+                  applyMiddleware(thunk)
+              )
           );
 
-    // add action to dispatch once store is loaded
-    store.dispatch(loadProducts());
+    // if there are no products, add action to dispatch once store is loaded
+    if (!store.managedProducts) {
+        store.dispatch(loadProducts());
+    }
 
     store.subscribe(throttle(() => saveState(store.getState()), 1000));
 

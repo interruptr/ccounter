@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/CalorieCounter/CalorieCounter';
 import ProductManager from './pages/ProductManager/ProductManager';
+import ProductForm from './pages/ProductForm/ProductForm';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-// import { Router, Route, browserHistory } from 'react-router';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
 
@@ -16,6 +16,7 @@ ReactDOM.render(
         <Router>
             <Switch>
                 <Route path="/counter" component={ App } />
+                <Route path="/product" component={ ProductForm } />
                 <Route path="/products" component={ ProductManager } />
             </Switch>
         </Router>

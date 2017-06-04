@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './ProductItem.css';
-import * as productListActions from './../../actions/productListActions';
+import Button, { red } from '../Button';
+import * as productListActions from '../../actions/counterProductActions';
 
 class ProductItem extends Component {
     constructor() {
@@ -18,30 +18,35 @@ class ProductItem extends Component {
 
     render() {
         return (
-            <div className="product-item">
-                <div className="product-title">
+            <tr>
+                <td>
                     { this.props.item.name }
-                </div>
-                <div className="product-calories">
+                </td>
+                <td>
+                    <input onChange={ this.recalculate } type="number" value={ this.amount } />
+                </td>
+                <td>
+                    <span>{ Math.round(this.props.item.macros.protein) }g protein</span>
+                </td>
+                <td>
+                    <span>{ Math.round(this.props.item.macros.carbs) }g carbohydrates</span>
+                </td>
+                <td>
+                    <span>{ Math.round(this.props.item.macros.fat) }g fat</span>
+                </td>
+                <td >
                     <span>{ Math.round(this.props.item.calories) } calories</span>
-
-                    <div className="product-amount">
-                        <input onChange={ this.recalculate } type="number" value={ this.amount } />
-                    </div>
+                </td>
+                <td>
                     {
                         this.props.item.name &&
-                        <button className="button"
+                        <Button color={ red } className="button"
                                 onClick={ () => this.props.removeProduct(this.props.item) }>
-                            x
-                        </button>
+                            Remove
+                        </Button>
                     }
-                </div>
-                <div className="product-macros">
-                    <span>{ Math.round(this.props.item.macros.protein) }g protein</span>
-                    <span>{ Math.round(this.props.item.macros.carbs) }g carbohydrates</span>
-                    <span>{ Math.round(this.props.item.macros.fat) }g fat</span>
-                </div>
-            </div>
+                </td>
+            </tr>
         )
     }
 }

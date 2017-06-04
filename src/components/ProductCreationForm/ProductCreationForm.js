@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button, { green } from '../../components/Button';
 
 const FIELD = {
     NAME: 'name',
@@ -11,6 +12,7 @@ const FIELD = {
 const Input = (props) => (
     <input type="text"
            value={ props.value }
+           placeholder={ props.placeholder }
            onChange={ (event) => props.onChange(props.name, event.target.value) }
     />
 );
@@ -20,12 +22,13 @@ class ProductCreationForm extends Component {
         super(props);
 
         this.state = {
-            name: '',
-            calories: 0,
-            protein: 0,
-            carbs: 0,
-            fat: 0
+            name: null,
+            calories: null,
+            protein: null,
+            carbs: null,
+            fat: null
         };
+
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -35,53 +38,67 @@ class ProductCreationForm extends Component {
 
     render() {
         return (
-            <form>
+            <form className="pure-form product-form">
                 <label htmlFor="name">
-                    Name:
+                    <span>Name:</span>
                     <Input name={FIELD.NAME}
+                           placeholder="Product name"
                            value={this.state[FIELD.NAME]}
                            onChange={this.handleChange}
                     />
                 </label>
 
                 <label htmlFor="calories">
-                    Calories:
+                    <span>Calories:</span>
                     <Input name={FIELD.CALORIES}
+                           placeholder="Calories"
                            value={this.state[FIELD.CALORIES]}
                            onChange={this.handleChange}
                     />
                 </label>
 
                 <label htmlFor="name">
-                    Protein:
+                    <span>Protein:</span>
                     <Input name={FIELD.PROTEIN}
+                           placeholder="Protein"
                            value={this.state[FIELD.PROTEIN]}
                            onChange={this.handleChange}
                     />
                 </label>
 
                 <label htmlFor="name">
-                    Carbohydrates:
+                    <span>Carbohydrates:</span>
                     <Input name={FIELD.CARBS}
+                           placeholder="Carbohydrates"
                            value={this.state[FIELD.CARBS]}
                            onChange={this.handleChange}
                     />
                 </label>
 
                 <label htmlFor="name">
-                    Fat:
+                    <span>Fat:</span>
                     <Input name={FIELD.FAT}
+                           placeholder="Fat"
                            value={this.state[FIELD.FAT]}
                            onChange={this.handleChange}
                     />
                 </label>
 
-                <button onClick={ (event) => {
-                    this.props.onClickCreate(this.state);
+                <Button color={ green } onClick={ (event) => {
                     event.preventDefault();
+                    this.props.onClickCreate({
+                        id: Date.now(),
+                        name: this.state.name,
+                        calories: this.state.calories,
+                        macros: {
+                            protein: this.state.protein,
+                            carbs: this.state.carbs,
+                            fat: this.state.fat
+                        }
+                    });
                 }}>
                     Create
-                </button>
+                </Button>
             </form>
         )
     }
