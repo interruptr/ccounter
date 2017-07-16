@@ -39,11 +39,6 @@ class ProductInput extends Component {
     }
 
     onSearchTextChanged(event, value) {
-        fetch('https://api.nal.usda.gov/ndb/reports/V2?ndbno=01009&ndbno=01009&ndbno=45202763&ndbno=35193&type=b&format=json&api_key=DEMO_KEY')
-            .then(function (response) {
-                console.log(response.json());
-            });
-
         this.setState((prevState) => Object.assign({}, prevState, {
             searchText: value,
             products: value
