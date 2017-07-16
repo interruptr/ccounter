@@ -35,10 +35,15 @@ class ProductInput extends Component {
     }
 
     fetchProducts(value) {
-        return fetch("https://www.kilo.lt/recipes/getProductsJSON/" + value).then((response) => console.log(response));
+        const apiBaseUrl = "https://api.nal.usda.gov/ndb/reports/V2?ndbno=01009&ndbno=01009&ndbno=45202763&ndbno=35193&type=b&format=json&api_key=DEMO_KEY";
+
+        return fetch(apiBaseUrl)
+            .then((response) => console.log(response));
     }
 
     onSearchTextChanged(event, value) {
+        this.fetchProducts(value);
+
         this.setState((prevState) => Object.assign({}, prevState, {
             searchText: value,
             products: value
