@@ -26,7 +26,7 @@ class App extends Component {
                     <Title>Hello</Title>
                     <Subtitle>Tell me what You've eaten today...</Subtitle>
                 </Header>
-                <ProductInput dataset={ this.props.managedProducts } onSelected={ this.addProduct } />
+                <ProductInput onSelected={ this.addProduct } />
                 <br />
                 <ProductList />
             </Layout>
